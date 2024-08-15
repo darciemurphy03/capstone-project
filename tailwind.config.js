@@ -11,6 +11,9 @@ module.exports = {
         marker: ['Permanent Marker', 'cursive'],
         poppins: ['Poppins', 'sans-serif'],
       },
+      backgroundImage: {
+        'background': "url(./back.jpg)"
+      }
     },
   },
   plugins: [],

@@ -1,23 +1,27 @@
 
 import './App.css';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Main from './components/Main';
-import Nav from './components/Nav';
+import BookingPage from './components/BookingPage';
+import Home from './components/Home';
 import logo from './logo.png'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ConfirmedBooking from './components/ConfirmedBooking';
 
 
 function App() {
   return (
-   <div className="min-h-screen flex flex-col">
-    <meta name="description" content="Little Lemon restaurant"/>
-    <meta name="og:title" content="Little Lemon"/>
-    <meta name="og:image" content={logo}/>
-     <Nav />
-     <Header />
-     <Main />
-     <Footer/>
-   </div>
+    <>
+      <meta name="description" content="Little Lemon restaurant" />
+      <meta name="og:title" content="Little Lemon" />
+      <meta name="og:image" content={logo} />
+
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/booking-page" element={<BookingPage />} />
+          <Route path="/confirmed" element={<ConfirmedBooking />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
